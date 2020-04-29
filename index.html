@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>konami code</title>
+</head>
+<body>
+    Try pressing <br>
+    UP UP DOWN DOWN LEFT LEFT RIGHT RIGHT
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+    <script>
+        const array = [];
+        const secretString = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowLeft", "ArrowRight", "ArrowRight"]
+        window.addEventListener('keydown', (e) => append(e.key));
+
+        function append(e){
+            array.push(e);
+            if(array.length > 8) array.shift(); //this removes the first element in the array.
+            if(JSON.stringify(array)==JSON.stringify(secretString)){
+                cornify_add();
+            }
+        }
+    </script>
+</body>
+</html>
